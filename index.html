@@ -4,12 +4,22 @@
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
-  <head>      <!--Import materialize.css-->
+  <head>
+    <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-    <link rel="stylesheet" text="text/css" href="css/mystyles.css">
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--My style sheet-->
+    <link rel="stylesheet" text="text/css" href="css/mystyles.css">
+
+    <!--Moment js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/af.js"></script>
+
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+
     <title>Mayhem Bus Depot</title>
 
   </head>
@@ -17,28 +27,28 @@
   <body>
 
     <div class="intro">
-
+      <div class = "container" style="background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3")";>
+      <h2>Muppet Mayhem Bus Depot</h2>
+      <h5>Today's  Date: <span id="current-date"></span></h5>
+    </div>
     </div>
 
-    <div class = "teal" style="background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3")";>
 
-    <h2>Muppet Mayhem Bus Depot</h2>
-    </div>
-
-
-
+    <div class="container">
     <div class="col s12 m8">
-      <h2 class="header">MAYHEM ALL THE TIME...OH YEAH!</h2>
+      <h3 class="header">MAYHEM ALL THE TIME...OH YEAH!</h3>
     </div>
+</div>
 
-    <div class="col s12 m8 responsive">
-  <div class="card horizontal">
+
+    <div id="card" class="col s12 m8 responsive">
+  <div class="card panel">
     <div class="card-image">
       <img class="responsive-img" src="./images/dr-teeth.jpg" alt="Dr.Teeth">
     </div>
     <div class="card-stacked">
       <div class="card-content">
-        <p>Welcome to the Mayhem Bus Company. Wherever your destination may take you...you are guarenteed to have an adventure of a lifetime!</p>
+        <p>Welcome to the Mayhem Bus Company. No matter your destination ...you are guarenteed to have the adventure of a lifetime!</p>
       </div>
       <div class="card-action">
         <a href="#table">READY TO BOOK MY TRIP</a>
@@ -53,9 +63,10 @@
         </div>
       </div>
     </div>
+
     <div class="container">
     <div class="col s12">
-        <p id="schedule">Current Bus Schedule</p>
+        <p id="schedule">Current Bus Schedule </p>
     </div>
       <table class="bordered stripped responsive-table" >
         <thead>
@@ -68,13 +79,13 @@
         </tr>
         </thead>
 
-        <tbody>
+        <tbody id="new-bus">
         <tr>
-          <td><span class="chip"><img class=responsive-img" src="./images/Fozzie_Bear.jpg"/>Fozzie Bear Electric</span></td>
-          <td>Jellybean</td>
-          <td>$3.76</td>
-          <td>$3.76</td>
-          <td>$3.76</td>
+          <td><span id="new-bus"class="chip"><img class=responsive-img" src="./images/Fozzie_Bear.jpg"/>Fozzie Bear Electric</span></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
         <tr>
           <td><span class="chip"><img class=responsive-img" src="./images/Kermit_Headshot.jpg"/>Kermit D. Frog Diesel</span></td>
@@ -85,28 +96,28 @@
         </tr>
         <tr>
           <td><span class="chip"><img class=responsive-img" src="./images/Piggy.jpg"/>Miss Piggy Express</span></td>
-          <td>Jellybean</td>
-          <td>$3.76</td>
-          <td>$3.76</td>
-          <td>$3.76</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
         <td><span class="chip"><img class=responsive-img" src="./images/Gonzo.jpg"/>Gonzo Rocket Series</span></td>
-        <td>Jellybean</td>
-        <td>$3.76</td>
-        <td>$3.76</td>
-        <td>$3.76</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         </tr>
         <td><span class="chip"><img class=responsive-img" src="./images/Animal.jpg"/>Animal Few Screws Loose Line</span></td>
-        <td>Jellybean</td>
-        <td>$3.76</td>
-        <td>$3.76</td>
-        <td>$3.76</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         </tr>
         <td><span class="chip"><img class=responsive-img" src="./images/mayhem bus.jpg"/>Old Reliable</span></td>
-        <td>Jellybean</td>
-        <td>$3.76</td>
-        <td>$3.76</td>
-        <td>$3.76</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         </tr>
         </tbody>
       </table>
@@ -119,7 +130,7 @@
         <div class="row">
           <div class="input-field col s6">
             <label for="bus_name">Bus Name:</label>
-            <input placeholder="enter bus name here" id="bus_name" type="text" class="validate">
+            <input placeholder="Miss Piggy Express" id="bus_name" type="text" class="bus_name">
           </div>
         </div>
           <div class="row">
@@ -140,7 +151,7 @@
             <input placeholder="enter frequency here" id="frequency_name" type="text" class="validate">
         </div>
           </div>
-        <a class="btn waves-effect waves-light circle" type="submit" name="action">Submit
+        <a class="btn waves-effect waves-light effect" type="submit" name="action">Submit
           <i class="material-icons right">subway</i>
         </a>
       </form>
@@ -153,6 +164,10 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $('.collapsible').collapsible();
+        });
+
+        $(document).ready(function() {
+            Materialize.updateTextFields();
         });
 
         $('.timepicker').pickatime({

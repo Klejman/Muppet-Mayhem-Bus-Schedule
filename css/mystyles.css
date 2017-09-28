@@ -22,7 +22,9 @@ html{
 }
 
 h2,
-p{
+h3,
+p,
+h5{
     text-align: center;
     color: #000;text-shadow:-1px -1px 0 #fff, 1px -1px #fff,-1px 1px 0 #fff, 1px 1px 0 #fff;
 }
@@ -64,4 +66,13 @@ padding:2px;
     color: #fff;text-shadow:-1px -1px 0 #000, 1px -1px #000,-1px 1px 0 #000, 1px 1px 0 #000;
     background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840,
     #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+}
+
+card{
+    width:50%;
+
+}
+
+.responive-img {
+    width:50%;
 }
