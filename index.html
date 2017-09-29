@@ -29,159 +29,93 @@
     <div class="intro">
       <div class = "container" style="background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3")";>
       <h2>Muppet Mayhem Bus Depot</h2>
-      <h5>Today's  Date: <span id="current-date"></span></h5>
+      <h6><span id="current-date"> </span><i class="material-icons">today </i>THE CURRENT DATE & TIME: </h6>
     </div>
     </div>
+<br/>
 
 
-    <div class="container">
-    <div class="col s12 m8">
-      <h3 class="header">MAYHEM ALL THE TIME...OH YEAH!</h3>
-    </div>
-</div>
-
-
-    <div id="card" class="col s12 m8 responsive">
+    <div id="card" class="col s12 m8 l12 responsive">
   <div class="card panel">
     <div class="card-image orange">
       <img class="responsive-img" src="./images/dr-teeth.jpg" alt="Dr.Teeth">
     </div>
     <div class="card-stacked">
       <div class="card-content">
-        <p>Welcome to the Mayhem Bus Company. No matter your destination ...you are guarenteed to have the adventure of a lifetime!</p>
-      </div>
-      <div class="card-action">
-        <a href="#table">READY TO BOOK MY TRIP</a>
+        <p>Welcome to the Mayhem Bus Company. No matter your destination ...you are guaranteed to have the adventure of a lifetime!</p>
       </div>
     </div>
   </div>
 </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="cols12">
-        </div>
-      </div>
-    </div>
+<br/>
 
-    <div class="container">
-    <div class="col s12">
-        <p id="schedule">Current Bus Schedule </p>
-    </div>
-      <table class="bordered stripped responsive-table" >
-        <thead>
-        <tr>
-          <th>Bus Name</th>
-          <th>Destination</th>
-          <th>Frequency (Min)</th>
-          <th>Next Arrival</th>
-          <th>Minutes Away</th>
-        </tr>
-        </thead>
 
-        <tbody id="new-bus">
-        <tr>
-          <td><span id="new-bus"class="chip"><img class=responsive-img" src="./images/Fozzie_Bear.jpg"/>Fozzie Bear Electric</span></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><span class="chip"><img class=responsive-img" src="./images/Kermit_Headshot.jpg"/>Kermit D. Frog Diesel</span></td>
-          <td>Jellybean</td>
-          <td>$3.76</td>
-          <td>$3.76</td>
-          <td>$3.76</td>
-        </tr>
-        <tr>
-          <td><span class="chip"><img class=responsive-img" src="./images/Piggy.jpg"/>Miss Piggy Express</span></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <td><span class="chip"><img class=responsive-img" src="./images/Gonzo.jpg"/>Gonzo Rocket Series</span></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        </tr>
-        <td><span class="chip"><img class=responsive-img" src="./images/Animal.jpg"/>Animal Few Screws Loose Line</span></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        </tr>
-        <td><span class="chip"><img class=responsive-img" src="./images/mayhem bus.jpg"/>Old Reliable</span></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="container">
-    <div class="row">
-      <form class="col s12">
-        <p>Add Bus</p>
         <div class="row">
-          <div class="input-field col s6">
-            <label for="bus_name">Bus Name:</label>
-            <input placeholder="Miss Piggy Express" id="bus_name" type="text" class="bus_name">
-          </div>
-        </div>
-          <div class="row">
-            <div class="input-field col s6">
-            <label for="destination">Destination:</label>
-              <input placeholder="enter destination" id="destination" type="text" class="validate">
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <label for="first-bus-time">First Bus Time (HH:mm- military time):></label>
-            <input placeholder="enter time here" id="first-bus-time" type="text" class="timepicker">
-          </div>
-        </div>
-        <div class="row">
-        <div class="input-field col s6">
-          <label for="frequency_name">Frequency (Min)></label>
-            <input placeholder="enter frequency here" id="frequency_name" type="text" class="validate">
-        </div>
-          </div>
-        <a class="btn waves-effect waves-light effect" type="submit" name="action">Submit
-          <i class="material-icons right">subway</i>
-        </a>
-      </form>
-        </div>
-    </div>
-    </div>
+            <div class="col md 4">
+            <div class="card-panel group">
+                <div class="card-panel primary">
+                    <div class="card-panel heading">Add Bus</div>
+                    <form class="s12 group">
+                        <div class="container container-fluid">
+                            <div class="form-group">
+                                <label for="bus-name">Bus Name</label>
+                                <input type="text" class="form-control" id="bus_name" placeholder="Kermit D for Diesel line">
+                            </div>
 
+                            <div class="form-group">
+                                <label for="destination">Destination</label>
+                                <input type="text" class="form-control" id="destination" placeholder="Muppet Studios">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bus-time">First bus time (HH:mm, AM/PM)</label>
+                                <input type="time" class=form-control" id="bus-time" placeholder="17:32"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="frequency">Frequency (Mins):</label>
+                                <input type="text" class="form-control" id="frequency" placeholder="10">
+                            </div>
+                            <a id="add-bus" class="btn waves-effect waves-light effect" type="submit">Submit<i class="material-icons right">subway</i></a>
+                            <!--<button id=add-bus" type="submit">Submit</button>-->
+                            <br/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+
+    <div class="col md 8">
+        <div class="container-fluid">
+            <div class="card-panel panel-primary">
+                <div class="card panel-heading"> Current Bus Schedule
+                <button type="button" class="btn waves-effect waves-light effect">Refresh</button></div>
+
+                <div class="card-panel panel-body">
+                    <div class="table-responsive">
+                        <table class="responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Bus Name</th>
+                                    <th>Destination</th>
+                                    <th>Frequency (Min)</th>
+                                    <th>Next Arrival</th>
+                                    <th>Minutes Away</th>
+                                    <th>Update</th>
+                                </tr>
+                                </thead>
+
+                                <tbody id="new-bus">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.collapsible').collapsible();
-        });
-
-        $(document).ready(function() {
-            Materialize.updateTextFields();
-        });
-
-        $('.timepicker').pickatime({
-            default: 'now', // Set default time: 'now', '1:30AM', '16:30'
-            fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
-            twelvehour: false, // Use AM/PM or 24-hour format
-            donetext: 'OK', // text for done-button
-            cleartext: 'Clear', // text for clear-button
-            canceltext: 'Cancel', // Text for cancel-button
-            autoclose: false, // automatic close timepicker
-            ampmclickable: true, // make AM PM clickable
-            aftershow: function(){} //Function for after opening timepicker
-        });
-    </script>
-    </div>
     </body>
   </html>
