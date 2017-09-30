@@ -39,8 +39,6 @@ $("#submit").on("click", function(event){
         //time data must be in correct format in input
     } else if (moment(firstBusTime,"HH:mm",true).isValid() && (frequency%1) === 0) {
         //pushes data to the firebase database
-        console.log("second");
-        console.log(database);
         var inputPush= {
             bus_name,
             destination,
@@ -48,14 +46,11 @@ $("#submit").on("click", function(event){
             frequency,
             determinetimeAdded: firebase.database.ServerValue.TIMESTAMP
         };
-console.log(inputPush);
+
         database.ref().push(inputPush);
-
-
         $("input").val("");
     }
     else {
-        console.log("third");
         alert("Please enter in the the time in the format specified");
     }
 
