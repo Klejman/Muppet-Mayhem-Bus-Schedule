@@ -34,6 +34,6 @@ function submitClick(){
 
     //data will be overwritten replacing the information with every click using the child method
     // firebaseRef.child("Text").set(messageText);
-    //push method will create a n unique ID that it stores each time
+    //push method will create a  unique ID that it stores each time
     firebaseRef.push().set(messageText);
 }

@@ -25,29 +25,37 @@ $("#submit").on("click", function(event){
     event.preventDefault();
 
     //updates variables based on the text within the input fields
-    bus_name = $("#trainName").val().trim();
+    bus_name = $("#bus_name").val().trim();
     destination = $("#destination").val().trim();
-    firstBusTime = $("#firstTrainTime").val().trim();
+    firstBusTime = $("#firstBusTime").val().trim();
     frequency = $("#frequency").val().trim();
 
     //all input values must be filled
     if (bus_name === "" || destination === "" || firstBusTime === "" || frequency === "") {
+        console.log("first");
+
+
         alert("All fields must be entered");
         //time data must be in correct format in input
     } else if (moment(firstBusTime,"HH:mm",true).isValid() && (frequency%1) === 0) {
         //pushes data to the firebase database
-        database.ref().push({
+        console.log("second");
+        console.log(database);
+        var inputPush= {
             bus_name,
             destination,
             firstBusTime,
             frequency,
             determinetimeAdded: firebase.database.ServerValue.TIMESTAMP
-        });
+        };
+console.log(inputPush);
+        database.ref().push(inputPush);
 
 
         $("input").val("");
     }
     else {
+        console.log("third");
         alert("Please enter in the the time in the format specified");
     }
 
@@ -92,4 +100,4 @@ database.ref().orderByChild("determinetimeAdded").on("child_added", function(sna
 
     $("tbody").append(newRow);
 });
-});
+
