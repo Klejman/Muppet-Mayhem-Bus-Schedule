@@ -3,8 +3,6 @@
   <head>
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  </head>
-  <head>
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 
@@ -14,8 +12,10 @@
     <!--My style sheet-->
     <link rel="stylesheet" text="text/css" href="css/mystyles.css">
 
-    <!--Moment js-->
+    <!--Moment local js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/af.js"></script>
+      <!--moment.js cdn-->
+      <script src="https://momentjs.com/downloads/moment.js"></script>
 
     <!--Firebase-->
     <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
@@ -29,11 +29,10 @@
     <div class="intro">
       <div class = "container" style="background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3")";>
       <h2>Muppet Mayhem Bus Depot</h2>
-      <h6><span id="current-date"> </span><i class="material-icons">today </i>THE CURRENT DATE & TIME: </h6>
+      <h6><span id="current_date"> </span><i class="material-icons">today </i>THE CURRENT DATE & TIME: </h6>
     </div>
     </div>
 <br/>
-
 
     <div id="card" class="col s12 m8 l12 responsive">
   <div class="card panel">
@@ -42,7 +41,7 @@
     </div>
     <div class="card-stacked">
       <div class="card-content">
-        <p>Welcome to the Mayhem Bus Company. No matter your destination ...you are guaranteed to have the adventure of a lifetime!</p>
+        <p>No matter your destination ...you are guaranteed to have the adventure of a lifetime!</p>
       </div>
     </div>
   </div>
@@ -52,14 +51,14 @@
 
 
         <div class="row">
-            <div class="col md 4">
-            <div class="card-panel group">
-                <div class="card-panel primary">
-                    <div class="card-panel heading">Add Bus</div>
-                    <form class="s12 group">
-                        <div class="container container-fluid">
-                            <div class="form-group">
-                                <label for="bus-name">Bus Name</label>
+            <div class="col sm4 md4">
+            <div class="card-panel group yellow">
+                <div class="card-panel primary yellow">
+                    <div class="card-panel heading yellow"style="font-size:25px;">Add Bus</div>
+                    <form class="s12 group yellow">
+                        <div class="container container-fluid yellow">
+                            <div class="form-group yellow">
+                                <label for="bus_name">Bus Name</label>
                                 <input type="text" class="form-control" id="bus_name" placeholder="Kermit D for Diesel line">
                             </div>
 
@@ -69,16 +68,15 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="bus-time">First bus time (HH:mm, AM/PM)</label>
-                                <input type="time" class=form-control" id="bus-time" placeholder="17:32"/>
+                                <label for="firstBusTime">First bus time (HH:mm, AM/PM)</label>
+                                <input type="time" class=form-control" id="firstBusTime" placeholder="17:32"/>
                             </div>
 
                             <div class="form-group">
                                 <label for="frequency">Frequency (Mins):</label>
                                 <input type="text" class="form-control" id="frequency" placeholder="10">
                             </div>
-                            <a id="add-bus" class="btn waves-effect waves-light effect" type="submit">Submit<i class="material-icons right">subway</i></a>
-                            <!--<button id=add-bus" type="submit">Submit</button>-->
+                            <button id=submit class="btn waves-effect waves-light effect" type="submit">Submit<i class="material-icons right">subway</i></button>
                             <br/>
                         </div>
                     </form>
@@ -86,15 +84,15 @@
             </div>
             </div>
 
-    <div class="col md 8">
-        <div class="container-fluid">
-            <div class="card-panel panel-primary">
-                <div class="card panel-heading"> Current Bus Schedule
+    <div class="col sm8 md8">
+        <div class="container-fluid purple">
+            <div class="card-panel panel-primary purple">
+                <div class="card panel-heading purple"> Current Bus Schedule
                 <button type="button" class="btn waves-effect waves-light effect">Refresh</button></div>
 
-                <div class="card-panel panel-body">
-                    <div class="table-responsive">
-                        <table class="responsive-table">
+                <div class="card-panel panel-body purple">
+                    <div class="table-responsive purple">
+                        <table class="responsive-table purple">
                             <thead>
                                 <tr>
                                     <th>Bus Name</th>
@@ -106,7 +104,7 @@
                                 </tr>
                                 </thead>
 
-                                <tbody id="new-bus">
+                                <tbody id="new_bus">
                                 </tbody>
                         </table>
                     </div>

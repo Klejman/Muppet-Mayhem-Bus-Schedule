@@ -1,0 +1,77 @@
+html{
+    background-color: #e1c737;
+    background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f9f679' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 0h35v35H0V0zm5 5h25v25H5V5zm5 5h15v15H10V10zm5 5h5v5h-5v-5zM40 5h25v25H40V5zm5 5h15v15H45V10zm5 5h5v5h-5v-5zM70 35H35v35h35V35zm-5 5H40v25h25V40zm-5 5H45v15h15V45zm-5 5h-5v5h5v-5zM30 40H5v25h25V40zm-5 5H10v15h15V45zm-5 5h-5v5h5v-5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body {
+    border: #21252b;
+    color: #8b2722;
+    text-shadow:
+            -1px -1px 0 #fff,
+            1px -1px 0 #fff,
+            -1px 1px 0 #fff,
+            1px 1px 0 #fff;
+    border-radius: 7px;
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    font-size: 16px;
+    outline: none;
+}
+
+input, button {
+    border: 0;
+    padding: 10px;
+}
+
+.mainDiv {
+    border-radius: 7px;
+    background-color: #eae493;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%23b8ba45' fill-opacity='1'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    padding: 20px;
+    width: 450px;
+    margin: 0px auto;
+    margin-top: 200px;
+    box-shadow: 0 0 20px #333;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 24px;
+}
+
+textarea {
+    border: 0px;
+    background: #f7ff98;
+    padding: 20px 0px;
+    outline: none;
+    width: 100%;
+    resize: none;
+}
+
+button {
+    background: #ffc01b;
+    color: #fff;
+    position: relative;
+    top: 50px;
+    width: 60px;
+    height: 49px;
+    line-height: 30px;
+    border-radius: 50%;
+}
+
+textarea {
+    color: #fff;
+    font-size:24px;
+    text-shadow:
+            -1px -1px 0 #fff,
+            1px -1px 0 #8b2722,
+            -1px 1px 0 #fff,
+            1px 1px 0 #8b2722
+}

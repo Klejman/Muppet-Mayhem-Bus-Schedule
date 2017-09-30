@@ -36,6 +36,7 @@ img#teeth{
 
 .chip{
     color: #fff;text-shadow:-1px -1px 0 #000, 1px -1px #000,-1px 1px 0 #000000, 1px 1px 0 #000;
+
     font-size: 14px;
     background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
 }
@@ -80,4 +81,16 @@ div.card-image{
 img.responsive-img, video.responsive-video {
    max-width:50%;
     max-height: 250px;
+}
+
+.card-panelheadingyellow {
+    color:yellow;
+}
+
+
+
+.card-panel{
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840,
+    #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f9f679' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 0h35v35H0V0zm5 5h25v25H5V5zm5 5h15v15H10V10zm5 5h5v5h-5v-5zM40 5h25v25H40V5zm5 5h15v15H45V10zm5 5h5v5h-5v-5zM70 35H35v35h35V35zm-5 5H40v25h25V40zm-5 5H45v15h15V45zm-5 5h-5v5h5v-5zM30 40H5v25h25V40zm-5 5H10v15h15V45zm-5 5h-5v5h5v-5z'/%3E%3C/g%3E%3C/svg%3E");
 }

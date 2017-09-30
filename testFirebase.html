@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Firebase Web Basics</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+
+    <script src="https://use.fontawesome.com/939e9dd52c.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/testFirebaseCss.css"/>
+
+</head>
+<body>
+
+<div class="mainDiv" align="right">
+    <h1 id="fireHeading" align="left" style="font-size: 40px;">Firebase Test App</h1>
+    <textarea id="mainText" placeholder="Enter text here..."></textarea>
+    <button id="submitBtn" onclick="submitClick()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+<script>
+// Initialize Firebase
+var config = {
+apiKey: "AIzaSyB5FHhh6zfNwiU8ZFtphPOYfvsX3WzWddE",
+authDomain: "trainscheduler-b16a5.firebaseapp.com",
+databaseURL: "https://trainscheduler-b16a5.firebaseio.com",
+projectId: "trainscheduler-b16a5",
+storageBucket: "trainscheduler-b16a5.appspot.com",
+messagingSenderId: "513747344997"
+};
+firebase.initializeApp(config);
+
+</script>
+
+<script src="testFirebase.js"></script>
+
+</body>
+</html>

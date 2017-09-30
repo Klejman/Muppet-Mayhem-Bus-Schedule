@@ -12,147 +12,84 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 // Initial Values
-var bus_name = "";
-var destination = "";
-var first-bus-time = "";
-var frequency = 0;
-var currentTime = moment();
-var index = 0;
-var busIDs = [];
+var bus_name;
+var destination;
+var firstBusTime;
+var frequency;
+var submit;
+var new_bus;
 
-// Show current time
-var datetime = null,
-    date = null;
+$("#submit").on("click", function(event){
 
-var update = function () {
-    date = moment(new Date())
-    datetime.html(date.format('dddd, MMMM Do YYYY, h:mm:ss a'));
-};
+    //prevents default button event
+    event.preventDefault();
 
-$(document).ready(function(){
-    datetime = $('#current-status')
-    update();
-    setInterval(update, 1000);
-});
-
-
-
-$("#add-bus").on("click", function() {
-
-
-    bus_name = $("#bus-name").val().trim();
+    //updates variables based on the text within the input fields
+    bus_name = $("#trainName").val().trim();
     destination = $("#destination").val().trim();
-    ffirst-bus-time = $("#bus-time").val().trim();
+    firstBusTime = $("#firstTrainTime").val().trim();
     frequency = $("#frequency").val().trim();
 
-
-    var firstTimeConverted = moment(first-bus-time, "hh:mm").subtract(1, "years");
-
-
-
-    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-
-
-
-    var tRemainder = diffTime % frequency;
-    //console.log(tRemainder);
-
-
-    var minutesAway = frequency - tRemainder;
-    //console.log("Minutes away: " + minutesAway);
+    //all input values must be filled
+    if (bus_name === "" || destination === "" || firstBusTime === "" || frequency === "") {
+        alert("All fields must be entered");
+        //time data must be in correct format in input
+    } else if (moment(firstBusTime,"HH:mm",true).isValid() && (frequency%1) === 0) {
+        //pushes data to the firebase database
+        database.ref().push({
+            bus_name,
+            destination,
+            firstBusTime,
+            frequency,
+            determinetimeAdded: firebase.database.ServerValue.TIMESTAMP
+        });
 
 
-    var nextBus = moment().add(minutesAway, "minutes");
-    //console.log("Arrival time: " + moment(nextBus).format("hh:mm"));
-
-
-    var nextArrival = moment(nextBus).format("hh:mm a");
-
-    var nextArrivalUpdate = function() {
-        date = moment(new Date())
-        datetime.html(date.format('hh:mm a'));
+        $("input").val("");
+    }
+    else {
+        alert("Please enter in the the time in the format specified");
     }
 
-    // Code for  push
-    database.ref().push({
-        bus_name: busName,
-        destination: destination,
-        first-bus-time: firstBusTime,
-        frequency: frequency,
-        minutesAway: minutesAway,
-        nextArrival: nextArrival,
-        dateAdded: firebase.database.ServerValue.TIMESTAMP
-    });
-
-    alert("Form submitted!");
-
-
-    $("#bus-name").val("");
-    $("#destination").val("");
-    $("#bus-time").val("");
-    $("#frequency").val("");
-
-
-    return false;
 });
 
 
-database.ref().orderByChild("dateAdded").limitToLast(5).on("child_added", function(snapshot) {
+database.ref().orderByChild("determinetimeAdded").on("child_added", function(snapshot) {
+
+    var snapshotData = snapshot.val();
+
+    var currentTime = moment();
 
 
-    console.log("Bus name: " + snapshot.val().busName);
-    console.log("Destination: " + snapshot.val().destination);
-    console.log("First bus: " + snapshot.val().firstBusTime);
-    console.log("Frequency: " + snapshot.val().frequency);
-    console.log("Next bus: " + snapshot.val().nextArrival);
-    console.log("Minutes away: " + snapshot.val().minutesAway);
-    console.log("==============================");
+    var firstBus = moment(snapshotData.firstBusTime, "HH:mm");
+
+    //uses the data to calculate time until next train and the time of the next train
+    var diffTime = moment().diff(firstBus, "minutes");
+    var timeRemainder = diffTime % snapshotData.frequency;
+    var minutesUntilBus = snapshotData.frequency - timeRemainder;
+    var nextBus = moment().add(minutesUntilBus,"minutes");
+
+    //dynamically created
+    var newRow = $("<tr>");
 
 
-
-    $("#new-bus").append("<tr><td>" + snapshot.val().busName + "</td>" +
-        "<td>" + snapshot.val().destination + "</td>" +
-        "<td>" + "Every " + snapshot.val().frequency + " mins" + "</td>" +
-        "<td>" + snapshot.val().nextArrival + "</td>" +
-        "<td>" + snapshot.val().minutesAway + " mins until arrival" + "</td>" +
-        "</td></tr>");
-
-    index++;
+    var newBusNameData = $("<td>");
+    var newDestinationData = $("<td>");
+    var newFrequencyData = $("<td>");
+    var nextArrivalData = $("<td>");
+    var minutesAwayData = $("<td>");
 
 
-}, function(errorObject) {
-    console.log("Errors handled: " + errorObject.code);
+    newBusNameData.append(snapshotData.bus_name);
+    newDestinationData.append(snapshotData.destination);
+    newFrequencyData.append(snapshotData.frequency);
+    nextArrivalData.append(moment(nextBus).format("HH:mm"));
+    minutesAwayData.append(minutesUntilBus);
+
+
+    newRow.append(newBusNameData, newDestinationData,  newFrequencyData, nextArrivalData, minutesAwayData);
+
+
+    $("tbody").append(newRow);
 });
-
-
-database.ref().once('value', function(dataSnapshot){
-    var busIndex = 0;
-
-    dataSnapshot.forEach(
-        function(childSnapshot) {
-            busIDs[busIndex++] = childSnapshot.key();
-        }
-    );
-});
-
-console.log(busIDs);
-
-$(document).ready(function(){
-    $('.collapsible').collapsible();
-});
-
-$(document).ready(function() {
-    Materialize.updateTextFields();
-});
-
-$('.timepicker').pickatime({
-    default: 'now', // Set default time: 'now', '1:30AM', '16:30'
-    fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
-    twelvehour: false, // Use AM/PM or 24-hour format
-    donetext: 'OK', // text for done-button
-    cleartext: 'Clear', // text for clear-button
-    canceltext: 'Cancel', // Text for cancel-button
-    autoclose: false, // automatic close timepicker
-    ampmclickable: true, // make AM PM clickable
-    aftershow: function(){} //Function for after opening timepicker
 });
