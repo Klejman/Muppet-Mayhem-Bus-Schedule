@@ -53,6 +53,26 @@ p#schedule{
     text-align: left;
 }
 
+
+
+h6 {
+    font-size:25px;
+
+}
+
+table {
+    color: #fff;
+}
+
+#remove{
+    background-color:;
+}
+
+form{
+    color: #000;text-shadow:-1px -1px 0 #fff, 1px -1px #fff,-1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+
 p {
     text-transform: uppercase;
     font-size:24px;
@@ -69,6 +89,9 @@ padding:2px;
     #1ddde8, #2b1de8, #dd00f3, #dd00f3);
 }
 
+.panel-heading {
+    margin-left: 5%;
+}
 
 div.card-content,
 div.card-action,
@@ -84,9 +107,8 @@ img.responsive-img, video.responsive-video {
 }
 
 .card-panelheadingyellow {
-    color:yellow;
+    color:purple;
 }
-
 
 
 .card-panel{
