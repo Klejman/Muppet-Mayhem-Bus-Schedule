@@ -102,7 +102,9 @@ div.card-image{
 
 
 img.responsive-img, video.responsive-video {
-   max-width:50%;
+    margin-left: 10%;
+    /*margin-right: auto;*/
+   max-width:60%;
     max-height: 250px;
 }
 
