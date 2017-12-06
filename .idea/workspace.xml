@@ -2,17 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e621344d-ab59-4cc1-a5e3-dd35d6f33240" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gtcbc-wk--7-HW" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/Animal.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/Gonzo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/Kermit_Headshot.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/Piggy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/mayhem bus.jpg" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Fozzie_Bear.jpg" afterPath="$PROJECT_DIR$/images/Fozzie_Bear 2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mystyles.css" afterPath="$PROJECT_DIR$/css/mystyles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -74,8 +63,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+            <state relative-caret-position="255">
+              <caret line="94" column="63" lean-forward="true" selection-start-line="94" selection-start-column="63" selection-end-line="94" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -103,8 +92,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="253" />
-    <option name="y" value="23" />
+    <option name="x" value="1538" />
+    <option name="y" value="104" />
     <option name="width" value="1306" />
     <option name="height" value="825" />
   </component>
@@ -181,15 +170,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512572078427</updated>
-      <workItem from="1512572079598" duration="2825000" />
+      <workItem from="1512572079598" duration="3079000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2825000" />
+    <option name="totallyTimeSpent" value="3079000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="253" y="23" width="1306" height="825" extended-state="0" />
+    <frame x="1538" y="104" width="1306" height="825" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299611" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -291,8 +280,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        <state relative-caret-position="255">
+          <caret line="94" column="63" lean-forward="true" selection-start-line="94" selection-start-column="63" selection-end-line="94" selection-end-column="63" />
           <folding />
         </state>
       </provider>
