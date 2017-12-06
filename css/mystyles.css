@@ -81,11 +81,11 @@ p {
 }
 
 table{
-  color:#e3e81d,text-shadow:-1px -1px 0 #000, 1px -1px #000,-1px 1px 0 #000, 1px 1px 0 #000;
+    color:#e3e81d,text-shadow:-1px -1px 0 #000, 1px -1px #000,-1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .btn{
-padding:2px;
+    padding:2px;
     color: #fff;text-shadow:-1px -1px 0 #000, 1px -1px #000,-1px 1px 0 #000, 1px 1px 0 #000;
     background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840,
     #1ddde8, #2b1de8, #dd00f3, #dd00f3);
@@ -106,7 +106,7 @@ div.card-image{
 img.responsive-img, video.responsive-video {
     margin-left: 10%;
     /*margin-right: auto;*/
-   max-width:60%;
+    max-width:60%;
     max-height: 250px;
 }
 
