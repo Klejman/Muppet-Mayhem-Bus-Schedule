@@ -1,5 +1,8 @@
 # Mayhem Bus Depot
+![mayhem bus scheduler 2](https://user-images.githubusercontent.com/28759418/35245932-ebfc080c-ff92-11e7-8e0c-20e8eb031aab.png)
+
 https://klejman.github.io/gtcbc-wk--7-HW/
+
 
 ## Application:
 On page load, persistent bus data will populate in the page table under "Current Bus Schedule".
