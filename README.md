@@ -1,5 +1,6 @@
 # Mayhem Bus Depot
-https://klejman.github.io/gtcbc-wk--7-HW/
+
+[Muppet® Mayhem Bus Depot](https://klejman.github.io/Muppet-Mayhem-Bus-Schedule/)
 
 ## Application:
 On page load, persistent bus data will populate in the page table under "Current Bus Schedule".
